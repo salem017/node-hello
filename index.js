@@ -14,7 +14,8 @@ const server = http.createServer((req, res) => {
         'Access-Control-Allow-Headers',
         'X-Requested-With,content-type',
       );
-      res.setHeader('Access-Control-Allow-Credentials', 'true');
+    res.setHeader('Access-Control-Allow-Credentials', 'true');
+    console.log(req.query.sitetocheck == 'www.zone-annuaire.tel');
     res.send(req.query.sitetocheck == 'www.zone-annuaire.tel');
   });
   
