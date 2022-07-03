@@ -1,14 +1,22 @@
 const http = require('http');
 const port = process.env.PORT || 3000;
-
+const express = require('express');
+const app = express();
 const server = http.createServer((req, res) => {
-  res.statusCode = 200;
   res.setHeader('Access-Control-Allow-Origin', '*');
-res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
-res.setHeader('Access-Control-Allow-Credentials', 'true');
-  const msg = 'Hello Node!\n'
-  res.end(msg);
+  res.setHeader(
+    'Access-Control-Allow-Methods',
+    'GET, POST, OPTIONS, PUT, PATCH, DELETE',
+  );
+  res.setHeader(
+    'Access-Control-Allow-Headers',
+    'X-Requested-With,content-type',
+  );
+  res.setHeader('Access-Control-Allow-Credentials', 'true');
+  app.get('/site', (req, res) => {
+    res.send(req.query.sitetocheck == 'www.zone-annuaire.tel');
+  });
+  
 });
 
 server.listen(port, () => {
