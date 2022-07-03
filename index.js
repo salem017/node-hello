@@ -4,6 +4,9 @@ const app = express();
 const port = 3000;
 app.use(cors());
 
+app.get('/', (req, res) => {
+  res.send('Hello World!');
+});
   app.get('/site', (req, res) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader(
