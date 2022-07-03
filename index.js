@@ -3,7 +3,7 @@ const port = process.env.PORT || 3000;
 const express = require('express');
 const app = express();
 const server = http.createServer((req, res) => {
-
+  res.setHeader('Access-Control-Allow-Origin', '*');
   app.get('/site', (req, res) => {
       res.setHeader('Access-Control-Allow-Origin', '*');
       res.setHeader(
