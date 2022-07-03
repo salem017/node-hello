@@ -19,6 +19,7 @@ app.get('/', (req, res) => {
     );
     res.setHeader('Access-Control-Allow-Credentials', 'true');
     console.log(req.query.sitetocheck == 'www.zone-annuaire.tel');
+    res.statusCode = 200;
     res.send(req.query.sitetocheck == 'www.zone-annuaire.tel');
   });
 
